@@ -1,11 +1,10 @@
-let str = 'Hello World Kranti';
+let inputStr = "Hello World Kranti"
 
-let inputStr = str.split(' ');
-
-let modifiedStr = '';
-
-for (i = 1; i < inputStr.length; i++) {
-  modifiedStr += inputStr[i].charAt(0).toLowerCase() + inputStr[i].slice(1);
+function modifyingstring(str) {
+    return str.split(' ')
+        .map((word, index) => index === 0 ? word : word.charAt(0).toLowerCase() + word.slice(1))
+        .join('')
 }
 
-console.log(inputStr[0] + modifiedStr);
+const result = modifyingstring(inputStr)
+console.log(result)
