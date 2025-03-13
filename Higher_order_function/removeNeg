@@ -1,0 +1,15 @@
+const myNumbers = [4, 1, -20, -7, 5, 9, -6];
+
+const removeNeg=(inputElement, callback)=>{
+  const MyArray = []
+  for(let x of inputElement){
+    if(callback(x)){
+      MyArray.push(x)
+    }
+  }
+  return MyArray
+}
+
+
+const arr=removeNeg(myNumbers, x=>x>0)
+console.log(arr)
