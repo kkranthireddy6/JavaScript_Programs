@@ -1,0 +1,17 @@
+function* fibonanci(){
+    let [prev, current] = [0, 1]
+    while(true){
+        yield current;
+        [prev, current] = [current, prev+current]
+    }
+}
+
+const g=fibonanci()
+console.log(g.next().value)
+console.log(g.next().value)
+console.log(g.next().value)
+console.log(g.next().value)
+console.log(g.next().value)
+console.log(g.next().value)
+console.log(g.next().value)
+console.log(g.next().value)
