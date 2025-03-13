@@ -1,0 +1,12 @@
+const name = {
+    firstName: 'kranti',
+    lastName: 'reddy'
+}
+
+function printFullName(hometown, state){
+    console.log(`firstname is ${this.firstName} and lastname is : ${this.lastName} and hometown is: ${hometown} and state is: ${state}`)
+}
+
+printFullName.call(name, 'hyderabad', 'Telangana')
+
+printFullName.apply(name, ["karimnagar", "Telangana"])
