@@ -1,0 +1,62 @@
+import axios from 'axios';
+
+// Create an instance of Axios
+const axiosInstance = axios.create({
+  baseURL: 'https://api.example.com', // Replace with your API's base URL
+});
+
+// Store the cancel token source for each request
+let cancelSource = null;
+
+// Request Interceptor
+axiosInstance.interceptors.request.use(
+  (config) => {
+    // If there's an ongoing request, cancel it
+    if (cancelSource) {
+      cancelSource.cancel('Request canceled due to a new request.');
+    }
+    // Create a new CancelToken source for the new request
+    cancelSource = axios.CancelToken.source();
+    
+    // Attach the cancel token to the request config
+    config.cancelToken = cancelSource.token;
+    
+    return config; // Proceed with the request
+  },
+  (error) => {
+    return Promise.reject(error); // Handle request error
+  }
+);
+
+// Response Interceptor
+axiosInstance.interceptors.response.use(
+  (response) => {
+    // Handle the response here (e.g., modify data, log, etc.)
+    return response;
+  },
+  (error) => {
+    // Handle errors here (e.g., network errors, cancel errors, etc.)
+    if (axios.isCancel(error)) {
+      console.log('Request was canceled: ', error.message); // Log cancellation
+    } else {
+      // Handle other types of errors (e.g., 404, 500)
+      console.error('Request failed: ', error);
+    }
+    return Promise.reject(error); // Return rejected promise for further handling
+  }
+  }
+);
+
+// Function to make a request
+const makeRequest = async () => {
+  try {
+    const response = await axiosInstance.get('/data');
+    console.log('Data received: ', response.data);
+  } catch (error) {
+    console.error('Request error: ', error);
+  }
+};
+
+// Trigger multiple requests
+makeRequest();
+makeRequest(); // The first request will be canceled when the second one is triggered
