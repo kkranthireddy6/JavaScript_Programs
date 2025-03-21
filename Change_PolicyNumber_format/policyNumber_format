@@ -1,0 +1,17 @@
+//input: "123-45-7890"
+//output: 123/7890/45
+
+const policy_number = "123-45-7890"
+
+function formatPolicyNumber(policyNumber){
+
+  const Regex = /^\d{3}-\d{2}-\d{4}/
+  const words = policyNumber.split('-')
+
+  if(Regex.test(policyNumber) && words.length === 3){
+    return `${words[0]}/${words[2]}/${words[1]}`
+  }
+}
+
+const result = formatPolicyNumber(policy_number)
+console.log(result)
