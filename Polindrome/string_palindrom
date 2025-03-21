@@ -1,0 +1,14 @@
+const str = "madam"
+
+function checkPalindrome(string1) {
+  for (let i = 0; i < string1.length / 2; i++) {
+    if (string1[i] !== string1[string1.length - 1]) {
+      return "string is not a palindrome"
+    }
+    return 'string is a palindrome'
+  }
+}
+
+
+const result = checkPalindrome(str)
+console.log(result)
