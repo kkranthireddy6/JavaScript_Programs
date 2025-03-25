@@ -1,0 +1,12 @@
+const str1 = 'This is the javascript';
+let count =  0;
+
+for(let i=0; i<str1.length; i++){
+    for(let j=0; j<str1.length; j++){
+        if(str1[i] == str1[j]){
+            count++
+        }
+    }
+}
+
+console.log(count)
