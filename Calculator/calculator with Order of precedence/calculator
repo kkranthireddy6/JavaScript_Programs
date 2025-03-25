@@ -1,0 +1,64 @@
+function add(num1, num2) {
+  return num1 + num2;
+}
+
+function subtract(num1, num2) {
+  return num1 - num2;
+}
+
+function multiply(num1, num2) {
+  return num1 * num2;
+}
+
+function divide(num1, num2) {
+  if (num2 === 0) {
+    return "Cannot divide by zero";
+  }
+  return num1 / num2;
+}
+
+function calculate(operator, num1, num2) {
+  switch (operator) {
+    case '+':
+      return add(num1, num2);
+    case '-':
+      return subtract(num1, num2);
+    case '*':
+      return multiply(num1, num2);
+    case '/':
+      return divide(num1, num2);
+    default:
+      return "Invalid operator";
+  }
+}
+
+function evaluateExpression(expression) {
+  // Split numbers and operators
+  const numbers = expression.split(/[\+\-\*\/]/).map(num => parseFloat(num.trim()));
+  const operators = expression.replace(/[0-9]/g, '').split('').filter(op => op !== ' ');
+
+  // First, handle multiplication and division
+  let i = 0;
+  while (i < operators.length) {
+    if (operators[i] === '*' || operators[i] === '/') {
+      numbers[i + 1] = calculate(operators[i], numbers[i], numbers[i + 1]);
+      numbers.splice(i, 1); // Remove the number after the operator
+      operators.splice(i, 1); // Remove the operator
+    } else {
+      i++;
+    }
+  }
+
+  // Now handle addition and subtraction
+  let result = numbers[0];
+  for (let j = 1; j < numbers.length; j++) {
+    result = calculate(operators[j - 1], result, numbers[j]);
+  }
+
+  return result;
+}
+
+// Example usage:
+const expression = "2 + 3 * 6 / 2 + 5";
+const result = evaluateExpression(expression);
+console.log(result); // Output: 16
