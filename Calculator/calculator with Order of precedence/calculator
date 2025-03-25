@@ -58,7 +58,7 @@ function evaluateExpression(expression) {
   return result;
 }
 
-// Example usage:
+
 const expression = "2 + 3 * 6 / 2 + 5";
 const result = evaluateExpression(expression);
 console.log(result); // Output: 16
