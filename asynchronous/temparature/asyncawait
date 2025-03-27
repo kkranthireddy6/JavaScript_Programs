@@ -1,0 +1,8 @@
+async function getTemperature(city) {
+  try {
+    const temp = await readTemperature(city);
+    console.log(`${city} temperature: ${temp}`);
+  } catch (err) {
+    console.error('Error:', err);
+  }
+}
