@@ -1,0 +1,11 @@
+function readTemperature(city) {
+  return new Promise((resolve, reject) => {
+    resolve(120);
+  });
+}
+
+readTemperature('Houston')
+.then((temp) => {
+  console.log(`Irving temparature is: ${temp}`)
+})
+.catch(error=>console.log(error));
