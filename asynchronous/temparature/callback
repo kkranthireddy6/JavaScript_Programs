@@ -1,0 +1,7 @@
+function readTemparature(city, callback){
+  return callback(120)
+}
+
+readTemparature("Houston", (temp)=>{
+  console.log(`Houston temparature is: ${temp}`)
+})
