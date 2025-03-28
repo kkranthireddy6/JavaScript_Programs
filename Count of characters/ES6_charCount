@@ -1,0 +1,21 @@
+console.log(stringCompressed("saloniwithsanjay"));
+
+function stringCompressed(str){
+  
+  let charCount = {};
+  for(char of str){
+    if(charCount[char]){
+      charCount[char]++;
+    }else{
+      charCount[char] = 1;
+    }
+  }
+  console.log(charCount);
+  
+  let compressedString = '';
+  for(let key in charCount){
+    compressedString += key + charCount[key];
+  }
+  return compressedString;
+  
+}
