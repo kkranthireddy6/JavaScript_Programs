@@ -1,0 +1,23 @@
+function countChars(input) {
+
+  let charsArr = input.split('');
+  let result = '';
+  let count = 1;
+
+  for (let i = 0; i < charsArr.length; i++) {
+
+    if (charsArr[i] === charsArr[i + 1]) {
+      count++;
+    } else {
+
+      result += charsArr[i] + count;
+      count = 1;
+    }
+  }
+
+  return result;
+}
+
+const str = 'aabcccccaa';
+const result = countChars(str);
+console.log(result); 
