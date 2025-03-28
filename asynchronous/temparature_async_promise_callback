@@ -1,0 +1,35 @@
+function readTemparature(city, callback) {
+  return callback(120)
+}
+
+readTemparature("Irving", (temp) => {
+  console.log(`Irving has temparature of:  ${temp}`)
+})
+
+
+function readTemparatures(city) {
+  return new Promise((resolve, reject) => {
+    resolve(120)
+  })
+}
+
+readTemparatures("Houston")
+  .then(temp => console.log(`Houston has temparature of:  ${temp}`))
+  .catch(error => console.log(error))
+
+
+async function getTemp(city) {
+  try {
+    const result = await readTemp(`120`)
+    console.log(`${city} has temparature of ${result}`)
+  }
+  catch (exception) {
+    console.log(error)
+  }
+}
+
+function readTemp(temp) {
+  return temp
+}
+
+getTemp("Austin")
