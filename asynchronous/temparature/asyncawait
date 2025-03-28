@@ -6,3 +6,5 @@ async function getTemperature(city) {
     console.error('Error:', err);
   }
 }
+
+getTemperature("Houston");
