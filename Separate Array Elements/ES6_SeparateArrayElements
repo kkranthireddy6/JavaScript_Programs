@@ -1,0 +1,25 @@
+const input_array = ['A', 'B', 'C', 1, 2, 3, '4', '5', 6, '@', '~', 'D'];
+
+const [integers, strings, chars] = input_array.reduce(
+  ([integers, strings, chars], item) => {
+
+    if(!isNaN(item)){
+      integers.push(+(item))
+    }
+
+    else if(isNaN(item) && typeof item === 'string' && /^[A-Za-z]/.test(item)){
+      strings.push(item)
+    }
+
+    else if(isNaN(item) && /[^A-Za-z0-9]/.test(item)){
+      chars.push(item)
+    }
+
+    return [integers, strings, chars]
+  },
+  [[], [], []]
+)
+
+console.log(integers)
+console.log(strings)
+console.log(chars)
