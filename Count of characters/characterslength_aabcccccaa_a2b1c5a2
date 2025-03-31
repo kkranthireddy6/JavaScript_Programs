@@ -1,12 +1,19 @@
-const str1 = 'This is the javascript';
-let count =  0;
+const string1 = 'aabcccccaa'
 
-for(let i=0; i<str1.length; i++){
-    for(let j=0; j<str1.length; j++){
-        if(str1[i] == str1[j]){
-            count++
-        }
+let repeatedStr = ''
+let count = 1
+
+function strRepeated(str){
+  for(let i=0; i<str.length; i++){
+    if(str[i] === str[i+1]){
+      count++
+    }else{
+      repeatedStr = repeatedStr+str[i]+count
+      count = 1
     }
+  }
+  return repeatedStr
 }
 
-console.log(count)
+const result = strRepeated(string1)
+console.log(result)
