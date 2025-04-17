@@ -1,0 +1,18 @@
+Array.prototype.groupBy = function () {
+  return people.reduce((group, person) => {
+    if (group[person.name] == null) {
+      group[person.name] = []
+    }
+    group[person.name].push(person)
+    return group
+  }, {})
+}
+
+const people = [
+  { name: 'Kelly', age: 20 },
+  { name: 'Sally', age: 21 },
+  { name: 'John', age: 22 },
+  { name: 'Kelly', age: 20 }
+]
+
+console.log(people.groupBy())
