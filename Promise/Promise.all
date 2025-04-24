@@ -1,0 +1,19 @@
+const myPromise1 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 300, "King");
+});
+
+const myPromise2 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 100, "Queen");
+});
+
+const myPromise3 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 200, "Minister");
+});
+
+// Both resolves. Who is faster?
+Promise.all([myPromise3, myPromise2, myPromise1]).then((x) => {
+  console.log(x);
+});
+
+
+//Answer: ["Minister", "Queen", "King"]
