@@ -19,3 +19,29 @@ Promise.all([myPromise3, myPromise2, myPromise1]).then((x) => {
 
 
 //Answer: ["Minister", "Queen", "King"]
+
+const orderBurger = new Promise(resolve=>{
+  setTimeout(()=>{
+    console.log('Burger is Ready')
+    resolve('Burger')
+  }, 300)
+})
+
+const orderPizza = new Promise((resolve)=>{
+  setTimeout(()=>{
+    console.log('Pizza is Ready')
+    resolve('Pizza')
+  }, 200)
+})
+
+const orderFries = new Promise((resolve)=>{
+  console.log('Order Fries')
+  setTimeout(()=>{
+    console.log('Fries are Ready')
+    resolve('Fries')
+  },100)
+})
+
+
+Promise.race([orderBurger, orderPizza, orderFries])
+.then(food=>console.log('All items are Ready', food))
