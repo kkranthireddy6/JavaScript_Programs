@@ -1,3 +1,5 @@
+//The Promise.allSettled() method returns a single Promise from a list of promises, when all promises sette.
+
 const myPromise1 = new Promise((resolve, reject) => {
   setTimeout(resolve, 200, "King");
 });
