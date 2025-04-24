@@ -1,0 +1,15 @@
+const myPromise1 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 200, "King");
+});
+
+const myPromise2 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 100, "Queen");
+});
+
+// Run when All promises are settled
+Promise.allSettled([myPromise1, myPromise2]).then((results) =>
+  results.forEach((x) => console.log(x, x.status)),
+);
+
+//{status: "fulfilled", value: "King"} fulfilled
+//{status: "fulfilled", value: "Queen"} fulfilled
