@@ -1,3 +1,5 @@
+//The Promise.all() method returns a single Promise from a list of promises, when all promises fulfill.
+
 const myPromise1 = new Promise((resolve, reject) => {
   setTimeout(resolve, 300, "King");
 });
