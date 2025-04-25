@@ -1,17 +1,12 @@
-const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-//output : [1, 2, 3] [4, 5, 6] [7, 8, 9] [10, 11]
+const arr = [1,2,3,4,5,6,7,8,9,10,11]
 
-function separateArrays(arr) {
-  const arr_new = []
-
-  for (let i = 0; i < arr.length; i++) {
-    let subarray_index = Math.floor(i / 3)
-    if (!arr_new[subarray_index]) {
-      arr_new[subarray_index] = []
-    }
-    arr_new[subarray_index].push(arr[i])
+function separateArrays(arr, size=3) {
+  let newarr = []
+  for(let i=0; i<arr.length; i+=3){
+    newarr.push(arr.slice(i, i+size))
   }
-  return arr_new
+  return newarr;
 }
 
-console.log(separateArrays(arr))
+const result = separateArrays(arr)
+console.log()
