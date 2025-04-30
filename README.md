@@ -1,3 +1,4 @@
 # JavaScript_Programs
 javascript programs
-https://github.com/coolvasanth/FrontEnd_interview_questions_with_javascript
+JAVASCRIPT INTERVIEW Q&A: https://github.com/coolvasanth/FrontEnd_interview_questions_with_javascript
+MATERIALS DSA JAVASCRIPT: https://www.mbloging.com/post/understanding-closures-in-javascript-exploring-their-depth-and-real-life-example?fbclid=IwY2xjawJ_cy9leHRuA2FlbQIxMABicmlkETF5TWxsb3dtNUJUeXV6U1E4AR4W74o7CawvqS_mVRCaUE3T0rV3cIW9njF_w9KRSO9woKB6-Y5VX9Mz9QcFig_aem_mNmFNtjvoyC_XDNUeKJ7qA
