@@ -1,21 +1,15 @@
-console.log(stringCompressed("saloniwithsanjay"));
+const str = 'aabcccccaad'
 
-function stringCompressed(str){
-  
-  let charCount = {};
-  for(char of str){
-    if(charCount[char]){
-      charCount[char]++;
-    }else{
-      charCount[char] = 1;
-    }
+const strArray = str.split('')
+const charCount = {}
+
+//{element: charCount[element]}
+strArray.forEach(element =>{
+  if(charCount[element] === undefined){
+    charCount[element] = 1
+  }else{
+    charCount[element]++
   }
-  console.log(charCount);
-  
-  let compressedString = '';
-  for(let key in charCount){
-    compressedString += key + charCount[key];
-  }
-  return compressedString;
-  
-}
+})
+
+console.log(charCount)
