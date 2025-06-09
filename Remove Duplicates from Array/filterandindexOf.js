@@ -4,3 +4,10 @@ let uniqueArr = duplicateArr.filter((item, index)=> duplicateArr.indexOf(item) =
 
 console.log(uniqueArr)
 
+
+const set: Set<number> = new Set(numbers); // correct type
+console.log([...set]);
+
+
+const uniqueNumbers: number[] = [...new Set(numbers)];
+console.log(uniqueNumbers);
