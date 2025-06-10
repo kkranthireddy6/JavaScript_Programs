@@ -1,19 +1,12 @@
-const compressString = (s1) => {
-  let charMap = new Map();
-  
-  for(let i=0; i<s1.length; i++){
-    charMap.set(s1[i], charMap.get(s1[i]) + 1 || 1);
-  }
-  
-  let s = '',
-      mapKeys = charMap.keys(),
-      mapValues = charMap.values();
-  charMap.forEach(function(value, key, map){
-    s += key+value;
-  });
-  
-  return s;
-}
+//Repeating numbers count. input: 1:1 2:2 4:3  5:2  3:2
 
-let a = 'aaabbccccaa';
-console.log(compressString(a));
+const array = [1, 2, 2, 4, 4, 4, 5, 5, 3, 3];
+const freqMap = new Map();
+
+array.forEach(arr=>
+    freqMap.set(arr, (freqMap.get(arr) || 0)+1)
+)
+
+for (let [key, value] of freqMap) {
+  console.log(`${key}: ${value}`);
+}
