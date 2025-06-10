@@ -1,4 +1,4 @@
-const str = "aabbcdde";
+const str = "aabcccccaa";
 const charMap = new Map();
 
 for (let ch of str) {
