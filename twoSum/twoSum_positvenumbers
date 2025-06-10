@@ -17,6 +17,4 @@ function TwoSum(nums, target) {
 const output = TwoSum([2, 7, 9, 11], 9)
 console.log(output)
 
-//2, 0
-//7, 1
-//return [0, 1]
+
