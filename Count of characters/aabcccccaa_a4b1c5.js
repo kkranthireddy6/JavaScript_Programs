@@ -33,3 +33,13 @@ console.log(countMap)
 for (let key in countMap) {
   console.log(`Element ${key} occurs ${countMap[key]} times`);
 }
+
+//{apple: 3, banana: 2, orange: 1}
+const items = ['apple', 'banana', 'apple', 'orange', 'banana', 'apple'];
+
+const count = items.reduce((accum, item)=> {
+  accum[item] = (accum[item] || 0) + 1 
+  return accum
+}, {})
+
+console.log(count)
