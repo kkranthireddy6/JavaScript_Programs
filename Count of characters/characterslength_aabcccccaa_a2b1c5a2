@@ -1,19 +1,12 @@
-const string1 = 'aabcccccaa'
+const str = "aabbcdde";
+const charMap = new Map();
 
-let repeatedStr = ''
-let count = 1
-
-function strRepeated(str){
-  for(let i=0; i<str.length; i++){
-    if(str[i] === str[i+1]){
-      count++
-    }else{
-      repeatedStr = repeatedStr+str[i]+count
-      count = 1
-    }
-  }
-  return repeatedStr
+for (let ch of str) {
+  charMap.set(ch, (charMap.get(ch) || 0) + 1);
 }
 
-const result = strRepeated(string1)
-console.log(result)
+for (let [key, value] of charMap) {
+ text += [key] + [value] 
+}
+
+console.log(text)
