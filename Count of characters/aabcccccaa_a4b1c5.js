@@ -1,6 +1,8 @@
 const str = "aabcccccaa";
 const charMap = new Map();
 
+let text = ''
+
 for (let ch of str) {
   charMap.set(ch, (charMap.get(ch) || 0) + 1);
 }
@@ -10,7 +12,6 @@ for (let [key, value] of charMap) {
 }
 
 console.log(text)
-
 
 let arrays = [[1, 2, 3], [2, 3, 4], [3, 4, 5]];
 let countMap = {};
