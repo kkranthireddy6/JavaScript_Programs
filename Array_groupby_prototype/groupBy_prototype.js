@@ -16,3 +16,14 @@ Array.prototype.groupBy = function () {
 }
 
 console.log(people.groupBy())
+
+
+//HashMaps groupBy
+const useMaps = new Map()
+
+for(const {name, age} of people){
+  useMaps.set(name, (useMaps.get(name)||0)+age)
+}
+
+const sums = Object.fromEntries(useMaps)
+console.log(sums)
