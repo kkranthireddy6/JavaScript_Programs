@@ -5,6 +5,16 @@ const people = [
   { name: 'Kelly', age: 20 }
 ]
 
+//HashMaps groupBy
+const useMaps = new Map()
+for(const {name, age} of people){
+  useMaps.set(name, (useMaps.get(name)||0)+age)
+}
+
+const sums = Object.fromEntries(useMaps)
+console.log(sums)
+
+//group elements by 'name'
 Array.prototype.groupBy = function () {
   return people.reduce((group, person) => {
     if (group[person.name] == null) {
@@ -34,13 +44,4 @@ const people = [
   { name: 'Kelly', age: 20 }
 ]
 
-console.log(people.groupBy('name'))
-
-//HashMaps groupBy
-const useMaps = new Map()
-for(const {name, age} of people){
-  useMaps.set(name, (useMaps.get(name)||0)+age)
-}
-
-const sums = Object.fromEntries(useMaps)
-console.log(sums)
+console.log(people.groupBy('name')
