@@ -6,13 +6,21 @@ const people = [
 ]
 
 //HashMaps groupBy
-const useMaps = new Map()
-for(const {name, age} of people){
-  useMaps.set(name, (useMaps.get(name)||0)+age)
+function calculateTotalSpent(transactions) {
+  const usersums = new Map()
+
+  for (const { userId, amount } of transactions) {
+    usersums.set(userId, (usersums.get(userId) || 0) + amount)
+  }
+  
+  const sums = [
+    { 'totalSpent': Object.values(usersums) },
+    { 'userId': Object.entries(usersums) }
+  ]
+  return sums
 }
 
-const sums = Object.fromEntries(useMaps)
-console.log(sums)
+console.log(calculateTotalSpent(transactions));
 
 //group elements by 'name'
 Array.prototype.groupBy = function () {
